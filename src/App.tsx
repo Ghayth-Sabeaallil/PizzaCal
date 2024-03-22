@@ -1,5 +1,5 @@
 //components
-import PizzaImgDiv from "./Components/PizzaImgDiv/PizzaImgDiv"
+import Card from "./Components/Card/Card"
 
 //data
 import pizzaDB from "../assets/pizza.json"
@@ -9,7 +9,7 @@ function App() {
   return (
     <>
 
-      <PizzaImgDiv pizzaDB={pizzaDB} />
+      <Card pizzaDB={pizzaDB} />
 
     </>
   )
