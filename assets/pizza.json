@@ -1,0 +1,37 @@
+[
+    {
+      "namn": "Margherita",
+      "ingredienser": ["tomatsås", "mozzarellaost", "färsk basilika"],
+      "img": "../assets/img/Margherita.png"
+    },
+    {
+      "namn": "Pepperoni",
+      "ingredienser": ["tomatsås", "mozzarellaost", "pepperoni"],
+      "img": "../assets/img/Pepperoni.png"
+    },
+    {
+      "namn": "Capricciosa",
+      "ingredienser": ["tomatsås", "mozzarellaost", "skinka", "champinjoner", "artiskockshjärtan", "oliver"],
+      "img": "../assets/img/Capricciosa.png"
+    },
+    {
+      "namn": "Diavola",
+      "ingredienser": ["tomatsås", "mozzarellaost", "pepperoni", "jalapeños"],
+      "img": "../assets/img/Diavola.png"
+    },
+    {
+      "namn": "Vegetariana",
+      "ingredienser": ["tomatsås", "mozzarellaost", "oliver", "paprika", "lök", "champinjoner", "majs"],
+      "img": "../assets/img/Vegetariana.png"
+    },
+    {
+      "namn": "Quattro Formaggi",
+      "ingredienser": ["tomatsås", "mozzarellaost", "gorgonzola", "parmesan", "ricotta"],
+      "img": "../assets/img/QuattroFormaggi.png"
+    },
+    {
+      "namn": "Marinara",
+      "ingredienser": ["tomatsås", "vitlök", "oregano", "olivolja"],
+      "img": "../assets/img/Marinara.png"
+    }
+  ]

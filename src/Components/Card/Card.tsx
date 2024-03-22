@@ -1,10 +1,15 @@
 import Size from "../Size/Size"
 import "./Card.css"
-import img from "./pizza.svg"
-const Card = () => {
+
+
+
+
+const Card = ({ pizzaDB }: any) => {
     return (<>
         <div className="card-div">
-            <img src={img} width="400" height="400" />
+            {pizzaDB.map((pizza: any) => {
+                return <img src={pizza.img} width="250" height="250" />
+            })}
             <Size />
         </div>
     </>)
