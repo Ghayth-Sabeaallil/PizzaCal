@@ -9,7 +9,7 @@ function App() {
   return (
     <>
 
-      <PizzaImgDiv />
+      <PizzaImgDiv pizzaDB={pizzaDB} />
 
     </>
   )
