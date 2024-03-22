@@ -12,3 +12,11 @@ function App() {
 }
 
 export default App
+
+
+const DefaultPizza = [
+  {
+    cheese: "Mozzarela",
+    sauce: "Tomatosauce"
+  }
+]
