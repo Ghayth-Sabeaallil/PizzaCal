@@ -1,0 +1,13 @@
+.size-div {
+  width: fit-content;
+  height: fit-content;
+  font-size: larger;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.size-div:last-child {
+  display: flex;
+}
