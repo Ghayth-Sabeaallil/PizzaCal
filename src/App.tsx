@@ -5,7 +5,7 @@ import PizzaAntalDiv from "./Components/PizzaAntalDiv/PizzaAntalDiv"
 
 //data
 import pizzaDB from "../assets/pizza.json"
-import Container from "./Components/Container/Container"
+import Container from "./Components/ContainerRoot/Container"
 
 function App() {
 
