@@ -4,38 +4,10 @@
   align-items: center;
   gap: 1rem;
 }
-.increment {
+.cart-btn {
   width: fit-content;
   height: fit-content;
-  padding: 0.3em 0.5em;
+  padding: 0.5em 3rem;
+  background-color: rgb(233, 231, 107);
   border-radius: 15px;
-  background-color: rgb(103, 194, 103);
-  color: white;
-  font-size: xx-large;
-  font-weight: bolder;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-.decrement {
-  width: fit-content;
-  height: fit-content;
-  padding: 0.3em 0.6em;
-  border-radius: 15px;
-  background-color: rgb(218, 99, 99);
-  color: white;
-  font-size: xx-large;
-  font-weight: bolder;
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-.antal {
-  color: white;
-  font-size: xx-large;
-  font-weight: bolder;
 }
