@@ -2,15 +2,13 @@ import "./Container.css"
 import { ReactNode } from "react";
 
 type ContainerProp = {
-    PizzaAntalDiv: ReactNode,
     PizzaImgDiv: ReactNode,
 
 };
 
-const Container = ({ PizzaAntalDiv, PizzaImgDiv }: ContainerProp) => {
+const Container = ({ PizzaImgDiv }: ContainerProp) => {
     return (
         <div className="container">
-            {PizzaAntalDiv}
             {PizzaImgDiv}
 
         </div>
