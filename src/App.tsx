@@ -1,15 +1,18 @@
 //components
 import PizzaImgDiv from "./Components/PizzaImgDiv/PizzaImgDiv"
+import PizzaAntalDiv from "./Components/PizzaAntalDiv/PizzaAntalDiv"
+
 
 //data
 import pizzaDB from "../assets/pizza.json"
+import Container from "./Components/Container/Container"
 
 function App() {
 
   return (
     <>
+      <Container PizzaAntalDiv={<PizzaImgDiv pizzaDB={pizzaDB} />} PizzaImgDiv={<PizzaAntalDiv />} />
 
-      <PizzaImgDiv pizzaDB={pizzaDB} />
 
     </>
   )
