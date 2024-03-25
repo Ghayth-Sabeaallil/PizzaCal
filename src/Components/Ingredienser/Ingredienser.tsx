@@ -18,7 +18,7 @@ const Ingredienser = () => {
             return pizzaDB[m.id].ingredienser.map((i) => {
               return (
                 <div className="defult-ingredienser" key={i}>
-                  <input type="checkbox" id={i} name={i} />
+                  <input checked type="checkbox" id={i} name={i} />
                   <label>{i}</label>
                 </div>
               );
