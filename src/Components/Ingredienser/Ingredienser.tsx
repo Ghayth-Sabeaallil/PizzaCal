@@ -12,9 +12,8 @@ const Ingredienser = () => {
     <>
       <fieldset className="pizzaFieldset">
         <legend className="main-legend">Ingredienser</legend>
-        
-        <div className="flex-container"> {/* basic ing och sås */}
-          <fieldset>
+        <div className="flex-container">
+          <fieldset className="ingredientsFieldset gridContainer2">
             <legend className="defult-legend">Basic ingredienser</legend>
             {state.pizzas.map((m) => {
               return pizzaDB[m.id].ingredienser.map((i) => {
@@ -42,7 +41,7 @@ const Ingredienser = () => {
           </fieldset>
         </div>
 
-        <fieldset className="ingredientsFieldset gridContainer">
+        <fieldset className="ingredientsFieldset gridContainer3">
           <legend className="extra-legend">Extra ingredienser 5kr/st</legend>
           {extra[0].extraIngredienser.map((x) => {
             return (
