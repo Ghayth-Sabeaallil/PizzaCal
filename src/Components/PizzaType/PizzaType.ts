@@ -3,4 +3,5 @@ export type PizzaList = {
     namn: string,
     ingredienser: string[],
     img: string
+    pris: number
 }
