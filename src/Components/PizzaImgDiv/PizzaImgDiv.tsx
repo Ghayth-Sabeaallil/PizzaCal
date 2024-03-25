@@ -32,7 +32,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
                 <img onClick={() => setId((count) => (count <= 5) ? count + 1 : 6)} src="../assets/img/right.png" alt="" />
             </div>
             <div className="containerBuy">
-                <div className="cart-btn" onClick={clickHandle}><img width="45px" height="45px" src="../assets/img/cart.png" alt="cart" /></div>
+                <div className="select-btn" onClick={clickHandle}><img width="45px" height="45px" src="../assets/img/checklist.png" alt="cart" />Select</div>
             </div>
         </div>
     </>)
