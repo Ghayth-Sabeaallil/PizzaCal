@@ -39,7 +39,7 @@
       "namn": "Quattro Formaggi",
       "ingredienser": ["tomatsås", "mozzarellaost", "gorgonzola", "parmesan", "ricotta"],
       "img": "../assets/img/QuattroFormaggi.png",
-      "pris": 130
+      "pris": 140
     },
     {
       "id": 7,
