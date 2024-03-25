@@ -31,7 +31,12 @@
     transform: scale(2);
     margin-left: 1.5em;
   }
+}
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .ingredientsFieldset {
@@ -72,4 +77,8 @@
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+input:hover {
+  cursor: pointer;
 }
