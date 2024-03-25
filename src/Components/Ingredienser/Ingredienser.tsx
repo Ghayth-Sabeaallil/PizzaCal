@@ -40,6 +40,19 @@ const Ingredienser = () => {
           );
         })}
       </fieldset>
+      <fieldset className="ingredientsFieldset">
+        <legend className="extra-legend">Sås 5kr/st</legend>
+        {extra[0].sås.map((x) => {
+          return (
+            <div className="defult-ingredienser" key={x}>
+              <div>
+                <input type="checkbox" id={x} name={x} />
+                <label>{x}</label>
+              </div>
+            </div>
+          );
+        })}
+      </fieldset>
     </>
   );
 };
