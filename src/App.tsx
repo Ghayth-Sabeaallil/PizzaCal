@@ -1,4 +1,6 @@
 import Card from "./Components/Card/Card"
+import ToppingBox from "./Components/Ingredients/IngredientsBox"
+import "./App.css"
 
 function App() {
 
@@ -6,7 +8,7 @@ function App() {
     <>
 
       <Card />
-
+      <ToppingBox />
     </>
   )
 }
