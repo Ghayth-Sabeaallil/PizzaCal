@@ -28,7 +28,7 @@ const Ingredienser = () => {
                     })}
 
                 </fieldset>
-                <fieldset>
+                <fieldset className="ingredientsFieldset">
                     <legend className="extra-legend">Extra ingredienser</legend>
                     {extra[0].extraIngredienser.map((x) => {
                         return (<div className="defult-ingredienser" key={x}>
