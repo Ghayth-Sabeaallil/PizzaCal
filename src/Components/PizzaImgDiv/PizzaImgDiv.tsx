@@ -25,7 +25,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
 
     return (<>
         <div className="pizza-img-div">
-            <h2 className="pizza-namn">{pizzaDB[id].namn}/{pizzaDB[id].pris}:-</h2>
+            <h2 className="pizza-namn">{pizzaDB[id].namn} / {pizzaDB[id].pris}:-</h2>
             <div className="img-arrow">
                 <img onClick={() => setId((count) => (count > 0) ? count - 1 : 0)} src="../assets/img/left.png" alt="left-arrow" />
                 <img onLoad={changeHandle} className="pizza-img" src={pizzaDB[id].img} alt={pizzaDB[id].namn} width="300" height="300" />
