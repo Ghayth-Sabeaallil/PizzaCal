@@ -1,5 +1,5 @@
 import { useContext, useState } from "react"
-import "./PizzaImgDiv.css"
+import "./PizzaImgDiv.scss"
 import { PizzaList } from "../PizzaType/PizzaType"
 import { PizzaContext } from "../PizzaContext/PizzaContextProvider"
 
