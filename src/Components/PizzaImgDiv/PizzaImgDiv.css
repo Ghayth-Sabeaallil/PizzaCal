@@ -7,11 +7,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-size: 50px;
+  font-size: 45px;
   font-family: "Caveat Brush";
   font-style: italic;
   color: white;
-  gap: 1rem;
+  gap: 0.2rem;
 }
 .pizza-img {
   -webkit-animation: rotate 40s linear 0s infinite;
@@ -51,6 +51,7 @@
   -o-user-select: none;
   user-select: none;
   color: black;
+  font-size: 30px;
 }
 .select-btn:hover {
   background-color: rgb(201, 199, 91);
