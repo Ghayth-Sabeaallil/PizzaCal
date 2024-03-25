@@ -12,7 +12,8 @@ const Ingredienser = () => {
     <>
       <fieldset className="pizzaFieldset">
         <legend className="main-legend">Ingredienser</legend>
-        <div className="flex-container">
+        
+        <div className="flex-container"> {/* basic ing och sås */}
           <fieldset>
             <legend className="defult-legend">Basic ingredienser</legend>
             {state.pizzas.map((m) => {

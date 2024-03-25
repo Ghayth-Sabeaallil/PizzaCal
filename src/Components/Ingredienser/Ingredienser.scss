@@ -33,6 +33,7 @@
   }
 }
 
+// Basic ingredienser och sås!
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -74,11 +75,13 @@
   gap: 1em;
 }
 
+//grid för extra ingredienser
 .gridContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
+// hover över alla inputs
 input:hover {
   cursor: pointer;
 }
