@@ -1,0 +1,75 @@
+.pizzaFieldset {
+  width: fit-content;
+  height: fit-content;
+  padding: 1em 3rem;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  .main-legend {
+    font-size: 2.5em;
+    font-weight: bolder;
+    font-family: "Caveat Brush";
+    font-style: italic;
+    color: #e9e76b;
+    transform: translatey(-50%);
+    width: max-content;
+    padding: 0 0.15em;
+  }
+  .defult-legend {
+    font-size: 2.1875em;
+    font-weight: bolder;
+    font-family: "Caveat Brush";
+    font-style: italic;
+    color: #e9e76b;
+    transform: translatey(-50%);
+    width: max-content;
+    padding: 0 0.15em;
+  }
+  input {
+    transform: scale(2);
+    margin-left: 1.5em;
+  }
+
+}
+
+.ingredientsFieldset {
+  width: fit-content;
+  height: fit-content;
+  padding: 1em 3rem;
+  border: 3px solid #ffffff;
+  border-radius: 15px;
+  gap: 2rem;
+  .extra-legend {
+    font-size: 2.1875em;
+    font-weight: bolder;
+    font-family: "Caveat Brush";
+    font-style: italic;
+    color: #e9e76b;
+    transform: translatey(-50%);
+    width: max-content;
+    padding: 0 0.15em;
+  }
+  input {
+    transform: scale(2);
+  }
+  label {
+    margin-left: 1em;
+  }
+}
+
+.defult-ingredienser {
+  font-size: 1.875em;
+  font-weight: bold;
+  font-family: "Caveat Brush";
+  font-style: italic;
+  color: #e9e76b;
+  display: flex;
+  gap: 1em;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}

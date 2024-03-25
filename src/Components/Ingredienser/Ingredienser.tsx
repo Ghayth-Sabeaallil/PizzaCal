@@ -3,7 +3,7 @@ import { PizzaContext } from "../PizzaContext/PizzaContextProvider";
 import pizzaDB from "../../../assets/pizza.json";
 import extra from "../../../assets/extra.json";
 
-import "./Ingredienser.css";
+import "./Ingredienser.scss";
 
 const Ingredienser = () => {
   const { state } = useContext(PizzaContext);
@@ -25,13 +25,11 @@ const Ingredienser = () => {
             });
           })}
         </fieldset>
-      </fieldset>
-
-      <fieldset className="ingredientsFieldset">
+        <fieldset className="ingredientsFieldset gridContainer">
         <legend className="extra-legend">Extra ingredienser 5kr/st</legend>
         {extra[0].extraIngredienser.map((x) => {
           return (
-            <div className="defult-ingredienser" key={x}>
+            <div className="defult-ingredienser "  key={x}>
               <div>
                 <input type="checkbox" id={x} name={x} />
                 <label>{x}</label>
@@ -40,6 +38,9 @@ const Ingredienser = () => {
           );
         })}
       </fieldset>
+      </fieldset>
+
+      
     </>
   );
 };
