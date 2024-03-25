@@ -4,7 +4,7 @@
 // Sätt ett pris 
 // fixa css:en
 
-const ToppingBox = () => {
+const ToppingsBox = () => {
   return (
     <>
       <h2>Extra Topping: 10:- / styck</h2>
@@ -48,4 +48,4 @@ const ToppingBox = () => {
   );
 };
 
-export default ToppingBox;
+export default ToppingsBox;
