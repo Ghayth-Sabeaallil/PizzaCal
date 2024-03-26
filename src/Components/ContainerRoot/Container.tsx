@@ -10,7 +10,6 @@ const Container = ({ PizzaImgDiv }: ContainerProp) => {
     return (
         <div className="container">
             {PizzaImgDiv}
-
         </div>
     )
 }
