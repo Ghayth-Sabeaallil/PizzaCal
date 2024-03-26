@@ -17,7 +17,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
         setPizza(e.currentTarget.alt)
     }
     const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
-        const element = document.getElementById('pizzaFieldset');
+        const element = document.getElementById('ingredienserDiv');
         if (element) {
             element.style.display = 'flex';
         }
