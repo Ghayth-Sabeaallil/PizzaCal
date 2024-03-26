@@ -19,7 +19,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
     const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
         const element = document.getElementById('pizzaFieldset');
         if (element) {
-            element.style.display = 'block';
+            element.style.display = 'flex';
         }
         dispatch({
             type: "ADD",
