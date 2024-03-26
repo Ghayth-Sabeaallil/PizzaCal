@@ -17,6 +17,10 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
         setPizza(e.currentTarget.alt)
     }
     const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
+        const element = document.getElementById('pizzaFieldset');
+        if (element) {
+            element.style.display = 'block';
+        }
         dispatch({
             type: "ADD",
             payload: { id: id },

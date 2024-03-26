@@ -10,7 +10,7 @@ const Ingredienser = () => {
 
   return (
     <>
-      <fieldset className="pizzaFieldset">
+      <fieldset id="pizzaFieldset" className="pizzaFieldset">
         <legend className="main-legend">Ingredienser</legend>
         <div className="flex-container">
           <fieldset className="ingredientsFieldset gridContainer2">
