@@ -1,25 +1,22 @@
 [
-    {
-      "extraIngredienser": 
-      ["mozzarellaost", 
-      "pommes", 
-      "räkor", 
-      "skinka", 
-      "champinjoner", 
-      "basilika", 
-      "pepperoni", 
-      "oliver", 
-      "ananas", 
-      "jalapeños", 
-      "lök", 
-      "paprika", 
-      "majs", 
-      "gorgonzola", 
-      "ricotta", 
-      "parmesan"],
-      "sås": ["stark sås", "blandad sås", "mild sås"]
-    }
-  ]
-  
-  
-    
+  {
+    "extraIngredienser": 
+    ["mozzarellaost", 
+    "pommes", 
+    "räkor", 
+    "skinka", 
+    "champinjoner", 
+    "basilika", 
+    "pepperoni", 
+    "oliver", 
+    "ananas", 
+    "jalapeños", 
+    "lök", 
+    "paprika", 
+    "majs", 
+    "gorgonzola", 
+    "ricotta", 
+    "parmesan"],
+    "sås": ["stark sås", "blandad sås", "mild sås"]
+  }
+]

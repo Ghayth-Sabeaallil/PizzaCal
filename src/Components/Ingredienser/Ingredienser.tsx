@@ -4,20 +4,16 @@ import pizzaDB from "../../../assets/pizza.json";
 import extra from "../../../assets/extra.json";
 
 import "./Ingredienser.scss";
+import { OrderContext } from "../OrderContext/OrderContextProvider";
 
-interface IngredienserProps {}
 
-const Ingredienser: React.FC<IngredienserProps> = () => {
-  const { state } = useContext(PizzaContext); // Accessing state from PizzaContext
+const Ingredienser = () => {
+  const { state } = useContext(PizzaContext);
   const [extraIngredients, setExtraIngredients] = useState<string[]>([]); // Iniitializing state for extra ingredients
 
-  const selectedPizza =
-    state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id]; // the first pizza from state if its available
+  const selectedPizza = state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id];  // the first pizza from state if its available
 
-  state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id];
-
-  // handle changes in exta ingredients
-  const handleExtrasChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleExtrasChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const isChecked = e.target.checked; // getting checkbox state
     const ingredient = e.target.name;
 
@@ -29,7 +25,22 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
     }
   };
 
-  console.log(state.pizzas);
+  const { dispatch } = useContext(OrderContext);
+
+
+  const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
+    const priceFieldset = document.getElementById('priceFieldset');
+    if (priceFieldset) {
+      priceFieldset.style.display = 'flex';
+    }
+    dispatch({
+      type: "ADD",
+      payload: { id: state.pizzas[0].id, price: pizzaDB[state.pizzas[0].id].pris, antal: 1, name: pizzaDB[state.pizzas[0].id].namn, extra: extraIngredients },
+    });
+
+  }
+
+
 
   return (
     <>
@@ -62,12 +73,7 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
                 return (
                   <div className="defult-ingredienser" key={x}>
                     <div>
-                      <input
-                        type="checkbox"
-                        id={x}
-                        name={x}
-                        onChange={handleExtrasChange}
-                      />
+                      <input onChange={handleExtrasChange} type="checkbox" id={x} name={x} />
                       <label>{x}</label>
                     </div>
                   </div>
@@ -82,12 +88,7 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
               return (
                 <div className="defult-ingredienser " key={x}>
                   <div>
-                    <input
-                      type="checkbox"
-                      id={x}
-                      name={x}
-                      onChange={handleExtrasChange}
-                    />
+                    <input onChange={handleExtrasChange} type="checkbox" id={x} name={x} />
                     <label>{x}</label>
                   </div>
                 </div>
@@ -96,42 +97,11 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
           </fieldset>
         </fieldset>
         <div className="containerBuy">
-          <div className="select-btn">$Buy</div>
+          <div className="select-btn" onClick={clickHandle}>$Add To Card</div>
         </div>
       </div>
 
-      <div> {/* Esmats */}
-        {/* Fieldset for selected pizza and its price */}
-        {selectedPizza && (
-          <fieldset className="ingredientsFieldset">
-            <legend className="extra-legend">Din Beställning</legend>
-            <div className="defult-ingredienser">
-              <div className="counterGrid">
-                <span>
-                  {selectedPizza?.namn}
-                </span>
-                {/* Displaying calculated price based on selected pizza and extra ingredients */}
-                <label>
-                  <span> price: </span>
-                  <span>
-                    {selectedPizza?.pris + extraIngredients.length * 5} /-
-                  </span>
-                </label>
-                {extraIngredients.length > 0 && (
-                  <div>
-                    <span>Tillägg</span>
-                    <ul>
-                      {extraIngredients.map((ingredient) => (
-                        <li key={ingredient}> {ingredient}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
-          </fieldset>
-        )}
-      </div>
+
     </>
   );
 };
