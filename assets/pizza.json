@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "namn": "Margherita",
+      "ingredienser": ["tomatsås", "mozzarellaost", "färsk basilika"],
+      "img": "../assets/img/Margherita.png",
+      "pris": 110
+    },
+    {
+      "id": 2,
+      "namn": "Pepperoni",
+      "ingredienser": ["tomatsås", "mozzarellaost", "pepperoni"],
+      "img": "../assets/img/Pepperoni.png",
+      "pris": 100
+    },
+    {
+      "id": 3,
+      "namn": "Capricciosa",
+      "ingredienser": ["tomatsås", "mozzarellaost", "skinka", "champinjoner", "artiskockshjärtan", "oliver"],
+      "img": "../assets/img/Capricciosa.png",
+      "pris": 135
+    },
+    {
+      "id": 4,
+      "namn": "Diavola",
+      "ingredienser": ["tomatsås", "mozzarellaost", "pepperoni", "jalapeños"],
+      "img": "../assets/img/Diavola.png",
+      "pris": 105
+    },
+    {
+      "id": 5,
+      "namn": "Vegetariana",
+      "ingredienser": ["tomatsås", "mozzarellaost", "oliver", "paprika", "lök", "champinjoner", "majs"],
+      "img": "../assets/img/Vegetariana.png",
+      "pris": 115
+    },
+    {
+      "id": 6,
+      "namn": "Quattro Formaggi",
+      "ingredienser": ["tomatsås", "mozzarellaost", "gorgonzola", "parmesan", "ricotta"],
+      "img": "../assets/img/QuattroFormaggi.png",
+      "pris": 140
+    },
+    {
+      "id": 7,
+      "namn": "Marinara",
+      "ingredienser": ["tomatsås", "vitlök", "oregano", "olivolja"],
+      "img": "../assets/img/Marinara.png",
+      "pris": 120
+    }
+  ]
