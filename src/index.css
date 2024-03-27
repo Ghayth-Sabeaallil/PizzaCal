@@ -10,6 +10,7 @@
   grid-template-columns: 1fr 2fr 1fr;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   background-image: url("../assets/img/bg.webp");
   background-size: cover;
   gap: 1rem;
