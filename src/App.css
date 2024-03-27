@@ -6,9 +6,11 @@
 #root {
   min-width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   justify-content: center;
   align-items: center;
+  background-image: url("../assets/img/bg.webp");
+  background-size: cover;
   gap: 1rem;
 }

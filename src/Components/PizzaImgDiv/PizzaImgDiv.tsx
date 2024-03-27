@@ -15,14 +15,17 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
   /* 
     const changeHandle: React.ChangeEventHandler<HTMLImageElement> = (e) => {
         setPizza(e.currentTarget.alt)
-    } */
-
-  const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
-    dispatch({
-      type: "ADD",
-      payload: { id: id },
-    });
-  };
+    }
+    const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
+        const element = document.getElementById('ingredienserDiv');
+        if (element) {
+            element.style.display = 'flex';
+        }
+        dispatch({
+            type: "ADD",
+            payload: { id: id },
+        });
+    }
 
   return (
     <>

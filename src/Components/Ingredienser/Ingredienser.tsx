@@ -33,99 +33,58 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
 
   return (
     <>
-      {/* Fieldset for basic ingredients */}
-      <fieldset className="pizzaFieldset">
-        <legend className="main-legend">Ingredienser</legend>
-        <div className="flex-container">
-          <fieldset className="ingredientsFieldset gridContainer2">
-            <legend className="defult-legend">Basic ingredienser</legend>
-            {state.pizzas.map((m) => {
-              return pizzaDB[m.id].ingredienser.map((i) => {
+      <div id="ingredienserDiv" className="ingredienserDiv">
+        <fieldset id="pizzaFieldset" className="pizzaFieldset">
+          <legend className="main-legend">Ingredienser</legend>
+          <div className="flex-container">
+            <fieldset className="ingredientsFieldset gridContainer2">
+              <legend className="defult-legend">Basic ingredienser</legend>
+              {state.pizzas.map((m) => {
+                return pizzaDB[m.id].ingredienser.map((i) => {
+                  return (
+                    <div className="defult-ingredienser" key={i}>
+                      <input defaultChecked type="checkbox" id={i} name={i} />
+                      <label>{i}</label>
+                    </div>
+                  );
+                });
+              })}
+            </fieldset>
+            <fieldset className="ingredientsFieldset">
+              <legend className="extra-legend">Sås 5kr/st</legend>
+              {extra[0].sås.map((x) => {
                 return (
-                  <div className="defult-ingredienser" key={i}>
-                    <input checked type="checkbox" id={i} name={i} />
-                    <label>{i}</label>
+                  <div className="defult-ingredienser" key={x}>
+                    <div>
+                      <input type="checkbox" id={x} name={x} />
+                      <label>{x}</label>
+                    </div>
                   </div>
                 );
-              });
-            })}
-          </fieldset>
+              })}
+            </fieldset>
+          </div>
 
-          <fieldset className="ingredientsFieldset">
-            <legend className="extra-legend">Sås 5kr/st</legend>
-            {extra[0].sås.map((x) => {
+          <fieldset className="ingredientsFieldset gridContainer3">
+            <legend className="extra-legend">Extra ingredienser 5kr/st</legend>
+            {extra[0].extraIngredienser.map((x) => {
               return (
-                <div className="defult-ingredienser" key={x}>
+                <div className="defult-ingredienser " key={x}>
                   <div>
-                    <input
-                      type="checkbox"
-                      id={x}
-                      name={x}
-                      onChange={handleExtrasChange}
-                    />
+                    <input type="checkbox" id={x} name={x} />
                     <label>{x}</label>
                   </div>
                 </div>
               );
             })}
           </fieldset>
-        </div>
-
-        <fieldset className="ingredientsFieldset gridContainer3">
-          <legend className="extra-legend">Extra ingredienser 5kr/st</legend>
-          {extra[0].extraIngredienser.map((x) => {
-            return (
-              <div className="defult-ingredienser " key={x}>
-                <div>
-                  <input
-                    type="checkbox"
-                    id={x}
-                    name={x}
-                    onChange={handleExtrasChange}
-                  />
-                  <label>{x}</label>
-                </div>
-              </div>
-            );
-          })}
         </fieldset>
-      </fieldset>
-
-      <div>
-        {/* Fieldset for selected pizza and its price */}
-        {selectedPizza && (
-          <fieldset
-            /* style={{ marginTop: "60px" }} */
-            className="ingredientsFieldset"
-          >
-            <legend className="extra-legend">Din Beställning</legend>
-            <div className="defult-ingredienser">
-              <div style={{ display: "grid" }}>
-                <span className="" style={{ color: "greenyellow" }}>
-                  {selectedPizza?.namn}
-                </span>
-                {/* Displaying calculated price based on selected pizza and extra ingredients */}
-                <label>
-                  <span style={{ color: "skyblue" }}> price: </span>
-                  <span style={{ color: "pink", fontSize: "40px" }}>
-                    {selectedPizza?.pris + extraIngredients.length * 5} /-
-                  </span>
-                </label>
-                {extraIngredients.length > 0 && (
-                  <div>
-                    <span style={{ color: "white" }}>Tillägg</span>
-                    <ul>
-                      {extraIngredients.map((ingredient) => (
-                        <li key={ingredient}> {ingredient}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
-          </fieldset>
-        )}
+        <div className="containerBuy">
+          <div className="select-btn" >$Buy</div>
+        </div>
       </div>
+
+
     </>
   );
 };
