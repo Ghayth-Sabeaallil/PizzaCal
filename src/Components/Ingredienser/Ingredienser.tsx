@@ -32,7 +32,7 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
       setExtraIngredients((prev) => prev.filter((item) => item !== ingredient));
     }
   };
-
+  
   console.log(state.pizzas);
 
   return (
@@ -104,7 +104,7 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
                 {/* Fieldset for selected pizza and its price */}
       {selectedPizza && (
         <fieldset style={{marginTop:"60px"}} className="ingredientsFieldset">
-          <legend className="extra-legend">Bill</legend>
+          <legend className="extra-legend">Din Beställning</legend>
           <div className="defult-ingredienser">
             <div style={{ display: "grid" }}>
               <span className="" style={{ color: "greenyellow" }}>
@@ -114,10 +114,20 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
               <label>
                 <span style={{ color: "skyblue" }}> price: </span>
                 <span style={{ color: "pink", fontSize: "40px" }}>
+
                   {selectedPizza?.pris + extraIngredients.length * 5} /-
                 </span>
               </label>
-              
+              {extraIngredients.length > 0 && (
+                <div>
+                  <span style={{color:"white"}}>Tillägg</span>
+                  <ul>
+                    {extraIngredients.map((ingredient) => 
+                    <li key={ingredient} > {ingredient}</li>
+                    )}
+                  </ul>
+                </div>
+              )}
               
             </div>
           </div>
