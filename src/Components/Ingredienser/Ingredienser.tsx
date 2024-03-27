@@ -103,26 +103,23 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
       <div> {/* Esmats */}
         {/* Fieldset for selected pizza and its price */}
         {selectedPizza && (
-          <fieldset
-            style={{ marginTop: "60px" }}
-            className="ingredientsFieldset"
-          >
+          <fieldset className="ingredientsFieldset">
             <legend className="extra-legend">Din Beställning</legend>
             <div className="defult-ingredienser">
-              <div style={{ display: "grid" }}>
-                <span className="" style={{ color: "greenyellow" }}>
+              <div className="counterGrid">
+                <span>
                   {selectedPizza?.namn}
                 </span>
                 {/* Displaying calculated price based on selected pizza and extra ingredients */}
                 <label>
-                  <span style={{ color: "skyblue" }}> price: </span>
-                  <span style={{ color: "pink", fontSize: "40px" }}>
+                  <span> price: </span>
+                  <span>
                     {selectedPizza?.pris + extraIngredients.length * 5} /-
                   </span>
                 </label>
                 {extraIngredients.length > 0 && (
                   <div>
-                    <span style={{ color: "white" }}>Tillägg</span>
+                    <span>Tillägg</span>
                     <ul>
                       {extraIngredients.map((ingredient) => (
                         <li key={ingredient}> {ingredient}</li>
