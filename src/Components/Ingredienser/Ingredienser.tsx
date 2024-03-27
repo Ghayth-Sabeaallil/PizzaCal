@@ -4,7 +4,8 @@ import pizzaDB from "../../../assets/pizza.json";
 import extra from "../../../assets/extra.json";
 
 import "./Ingredienser.scss";
-import PriceDiv from "../PriceDiv/PriceDiv";
+import { OrderContext } from "../OrderContext/OrderContextProvider";
+
 
 const Ingredienser = () => {
   const { state } = useContext(PizzaContext);
@@ -24,14 +25,22 @@ const Ingredienser = () => {
     }
   };
 
+  const { dispatch } = useContext(OrderContext);
+
+
   const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
     const priceFieldset = document.getElementById('priceFieldset');
-
     if (priceFieldset) {
       priceFieldset.style.display = 'flex';
     }
+    dispatch({
+      type: "ADD",
+      payload: { id: state.pizzas[0].id, price: pizzaDB[state.pizzas[0].id].pris, antal: 1, name: pizzaDB[state.pizzas[0].id].namn, extra: extraIngredients },
+    });
 
   }
+
+
 
   return (
     <>
@@ -82,10 +91,9 @@ const Ingredienser = () => {
           </fieldset>
         </fieldset>
         <div className="containerBuy">
-          <div className="select-btn" onClick={clickHandle}>$Buy</div>
+          <div className="select-btn" onClick={clickHandle}>$Add To Card</div>
         </div>
       </div>
-      <PriceDiv selectedPizza={selectedPizza} extraIngredients={extraIngredients} />
 
 
     </>

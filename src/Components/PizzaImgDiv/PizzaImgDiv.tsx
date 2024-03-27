@@ -14,6 +14,11 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
 
 
     const changeHandle: React.ChangeEventHandler<HTMLImageElement> = (e) => {
+        const ingredienserDiv = document.getElementById('ingredienserDiv');
+        const root = document.getElementById('root');
+        if (ingredienserDiv && root) {
+            ingredienserDiv.style.visibility = 'hidden';
+        }
         setPizza(e.currentTarget.alt)
     }
     const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
@@ -22,12 +27,13 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
 
         if (ingredienserDiv && root) {
             ingredienserDiv.style.display = 'flex';
+            ingredienserDiv.style.visibility = 'visible';
             root.style.display = 'grid';
             root.style.gridTemplateColumns = '1fr 2fr 1fr'
 
         }
         dispatch({
-            type: "ADD",
+            type: "SELECT",
             payload: { id: id },
         });
     }

@@ -1,44 +1,60 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import "./PriceDiv.scss"
+import { OrderContext } from "../OrderContext/OrderContextProvider";
 
-const PriceDiv = ({ selectedPizza, extraIngredients }: any) => {
+
+const PriceDiv = () => {
+    const { state, dispatch } = useContext(OrderContext);
     const [antal, setAntal] = useState(1);
+
+    let price: number[] = [];
+
+
     return (
-        <>{selectedPizza && (
+        <>{
             <fieldset style={{ marginTop: "60px" }} className="priceFieldset" id="priceFieldset">
                 <legend className="price-legend">Din Beställning</legend>
-                <div style={{ display: "grid" }}>
-                    <div className="antal">
-                        <span style={{ color: "#74993a", fontSize: "35px" }}>
-                            {selectedPizza?.namn}
-                        </span>
-                        <button onClick={() => setAntal((antal) => (antal > 1) ? antal - 1 : 1)}>-</button>
-                        <span>{antal}</span>
-                        <button onClick={() => setAntal((antal) => antal + 1)}>+</button>
-                    </div>
-
-                    {/* Displaying calculated price based on selected pizza and extra ingredients */}
-                    <label>
-                        <span style={{ color: "#438ba8" }}> price: </span>
-                        <span style={{ color: "#c999be", fontSize: "40px" }}>
-
-                            {(selectedPizza?.pris + (extraIngredients.length * 5)) * antal} :-
-                        </span>
-                    </label>
-                    {extraIngredients.length > 0 && (
-                        <div>
-                            <span style={{ color: "black" }}>Tillägg</span>
-                            <ul>
-                                {extraIngredients.map((ingredient: string) =>
-                                    <li key={ingredient} > {ingredient} x {antal}</li>
-                                )}
-                            </ul>
+                {state.pizzas.map((o) => {
+                    price.push((o.price + (o.extra.length * 5)));
+                    return (<><div style={{ display: "grid" }}>
+                        <div className="antal">
+                            <span style={{ color: "#74993a", fontSize: "35px" }}>
+                                {o.name}
+                            </span>
+                            <button id={o.id.toString()} >-</button>
+                            <span>{antal}</span>
+                            <button id={o.id.toString()} >+</button>
                         </div>
-                    )}
 
-                </div>
+                        {/* Displaying calculated price based on selected pizza and extra ingredients */}
+                        <label>
+                            <span style={{ color: "#438ba8" }}> price: </span>
+                            <span style={{ color: "#c999be", fontSize: "40px" }}>
+
+                                {(o.price + (o.extra.length * 5)) * antal} :-
+                            </span>
+                        </label>
+                        {o.extra.length > 0 && (
+                            <div>
+                                <span style={{ color: "black" }}>Tillägg</span>
+                                <ul>
+                                    {o.extra.map((ingredient: string) =>
+                                        <li key={ingredient} > {ingredient} x {antal}</li>
+                                    )}
+                                </ul>
+                            </div>
+                        )}
+                    </div></>)
+                })}
+                <label>
+                    <span style={{ color: "#438ba8" }}> Total: </span>
+                    <span style={{ color: "#c999be", fontSize: "40px" }}>
+                        {price.reduce((partialSum, a) => partialSum + a, 0)}
+                    </span>
+                </label>
+
             </fieldset>
-        )}</>
+        }</>
     )
 }
 
