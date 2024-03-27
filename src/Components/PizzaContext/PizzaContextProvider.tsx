@@ -21,17 +21,14 @@ export const PizzaContext = createContext<{ state: PizzaState; dispatch: React.D
 });
 
 type Action =
-    | { type: "ADD"; payload: Pizza }
-    | { type: "REMOVE"; payload: string };
+    | { type: "SELECT"; payload: Pizza };
 
 const reducer = (state: PizzaState, action: Action) => {
     switch (action.type) {
-        case "ADD":
+        case "SELECT":
             return {
                 pizzas: [action.payload],
             };
-        case "REMOVE":
-            return state;  // detta ska ändras! Remove fungerar inte
         default:
             return state;
     }

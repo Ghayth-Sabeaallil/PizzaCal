@@ -1,0 +1,45 @@
+.priceFieldset {
+    width: fit-content;
+    height: fit-content;
+    padding: 7px 40px 7px 40px;
+    margin-top: 10em;
+    margin: 0.5em;
+    border: 2px solid #ffffff;
+    font-size: 1.75em;
+    font-family: "Caveat Brush";
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.75em;
+    background-image: url("../assets/img/paper.jpg");
+
+
+    .price-legend {
+      font-size: 1.75em;
+      font-family: "Caveat Brush";
+      font-style: italic;
+      color: #e9e76b;
+      transform: translatey(-50%);
+      width: max-content;
+      padding: 0 0.30em;
+    }
+    input {
+      transform: scale(2);
+    }
+    label {
+      margin-left: 1em;
+    }  
+  }
+.antal{
+    display: flex;
+    gap: 1em;
+    button{
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 2px 2px;
+        font-size: 24px;
+    }
+}
