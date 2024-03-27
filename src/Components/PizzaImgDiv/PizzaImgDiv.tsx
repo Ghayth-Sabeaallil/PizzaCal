@@ -12,7 +12,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
   const [pizza, setPizza] = useState("");
   const { dispatch } = useContext(PizzaContext);
 
-  /* 
+   
     const changeHandle: React.ChangeEventHandler<HTMLImageElement> = (e) => {
         setPizza(e.currentTarget.alt)
     }
@@ -52,14 +52,14 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
             alt="right-arrow"
           />
         </div>
-        <div className="pizza-size">
+        {/* <div className="pizza-size">
           <button>
             <img src="../assets/img/person.png" alt="person" />
           </button>
           <button>
             <img src="../assets/img/family.png" alt="person" />
           </button>
-        </div>
+        </div> */}
         <div className="containerBuy">
           <div className="select-btn" onClick={clickHandle}>
             ✓Select
