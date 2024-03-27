@@ -17,7 +17,7 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
   state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id];
 
   // handle changes in exta ingredients
-  const handleExtrasChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleExtrasChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked; // getting checkbox state
     const ingredient = e.target.name;
 
@@ -43,7 +43,13 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
                 return pizzaDB[m.id].ingredienser.map((i) => {
                   return (
                     <div className="defult-ingredienser" key={i}>
-                      <input defaultChecked type="checkbox" id={i} name={i} />
+                      <input
+                        defaultChecked
+                        type="checkbox"
+                        id={i}
+                        name={i}
+                        onChange={handleExtrasChange}
+                      />
                       <label>{i}</label>
                     </div>
                   );
@@ -56,7 +62,12 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
                 return (
                   <div className="defult-ingredienser" key={x}>
                     <div>
-                      <input type="checkbox" id={x} name={x} />
+                      <input
+                        type="checkbox"
+                        id={x}
+                        name={x}
+                        onChange={handleExtrasChange}
+                      />
                       <label>{x}</label>
                     </div>
                   </div>
@@ -71,7 +82,12 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
               return (
                 <div className="defult-ingredienser " key={x}>
                   <div>
-                    <input type="checkbox" id={x} name={x} />
+                    <input
+                      type="checkbox"
+                      id={x}
+                      name={x}
+                      onChange={handleExtrasChange}
+                    />
                     <label>{x}</label>
                   </div>
                 </div>
@@ -80,11 +96,45 @@ const Ingredienser: React.FC<IngredienserProps> = () => {
           </fieldset>
         </fieldset>
         <div className="containerBuy">
-          <div className="select-btn" >$Buy</div>
+          <div className="select-btn">$Buy</div>
         </div>
       </div>
 
-
+      <div> {/* Esmats */}
+        {/* Fieldset for selected pizza and its price */}
+        {selectedPizza && (
+          <fieldset
+            style={{ marginTop: "60px" }}
+            className="ingredientsFieldset"
+          >
+            <legend className="extra-legend">Din Beställning</legend>
+            <div className="defult-ingredienser">
+              <div style={{ display: "grid" }}>
+                <span className="" style={{ color: "greenyellow" }}>
+                  {selectedPizza?.namn}
+                </span>
+                {/* Displaying calculated price based on selected pizza and extra ingredients */}
+                <label>
+                  <span style={{ color: "skyblue" }}> price: </span>
+                  <span style={{ color: "pink", fontSize: "40px" }}>
+                    {selectedPizza?.pris + extraIngredients.length * 5} /-
+                  </span>
+                </label>
+                {extraIngredients.length > 0 && (
+                  <div>
+                    <span style={{ color: "white" }}>Tillägg</span>
+                    <ul>
+                      {extraIngredients.map((ingredient) => (
+                        <li key={ingredient}> {ingredient}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+          </fieldset>
+        )}
+      </div>
     </>
   );
 };
