@@ -25,7 +25,8 @@ export const OrderContext = createContext<{ state: OrderState; dispatch: React.D
 });
 
 type Action = { type: "ADD"; payload: Order }
-    | { type: "REMOVE"; payload: string } | { type: "EDIT"; payload: string };
+    | { type: "REMOVE"; payload: string } |
+{ type: "EDIT"; payload: string };
 
 const reducer = (state: OrderState, action: Action) => {
     switch (action.type) {
@@ -34,7 +35,15 @@ const reducer = (state: OrderState, action: Action) => {
                 pizzas: [...state.pizzas, action.payload],
             };
         case "REMOVE":
-            return state;  // detta ska ändras! Remove fungerar inte
+            return {
+                ...state,
+                pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
+            };
+        case "EDIT":
+            return {
+                ...state,
+                pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
+            };
         default:
             return state;
     }
