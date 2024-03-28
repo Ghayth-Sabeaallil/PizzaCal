@@ -9,9 +9,11 @@ const PriceDiv = () => {
 
     let price: number[] = [];
 
-
+    const handleRemove = (id: number) => {
+        dispatch({ type: "REMOVE", payload: id.toString() });
+    };
     return (
-        <>{
+        <>{state &&
             <fieldset style={{ marginTop: "60px" }} className="priceFieldset" id="priceFieldset">
                 <legend className="price-legend">Din Beställning</legend>
                 {state.pizzas.map((o) => {
@@ -24,6 +26,7 @@ const PriceDiv = () => {
                             <button id={o.id.toString()} >-</button>
                             <span>{antal}</span>
                             <button id={o.id.toString()} >+</button>
+                            <div className="trash" onClick={() => handleRemove(o.id)}><img src="../../assets/img/trash.png" alt="trash" /></div>
                         </div>
 
                         {/* Displaying calculated price based on selected pizza and extra ingredients */}
