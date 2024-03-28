@@ -38,7 +38,7 @@ const reducer = (state: OrderState, action: Action) => {
         case "REMOVE":
             return {
                 ...state.pizzas,
-                pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
+                pizzas: state.pizzas.filter((l) => l.uuid !== action.payload),
             };
         case "EDIT":
             return {

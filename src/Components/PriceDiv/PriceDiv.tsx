@@ -9,8 +9,8 @@ const PriceDiv = () => {
 
     let price: number[] = [];
 
-    const handleRemove = (id: number) => {
-        dispatch({ type: "REMOVE", payload: id.toString() });
+    const handleRemove = (id: string) => {
+        dispatch({ type: "REMOVE", payload: id });
     };
     const handleAntal = (id: string) => {
         if (id[1] === "+") {
@@ -37,7 +37,7 @@ const PriceDiv = () => {
                             <button onClick={() => handleAntal(o.id.toString() + "-")}>-</button>
                             <span>{o.antal}</span>
                             <button onClick={() => handleAntal(o.id.toString() + "+")}>+</button>
-                            <div className="trash" onClick={() => handleRemove(o.id)}><img src="../../assets/img/trash.png" alt="trash" /></div>
+                            <div className="trash" onClick={() => handleRemove(o.uuid)}><img src="../../assets/img/trash.png" alt="trash" /></div>
                         </div>
 
                         {/* Displaying calculated price based on selected pizza and extra ingredients */}
