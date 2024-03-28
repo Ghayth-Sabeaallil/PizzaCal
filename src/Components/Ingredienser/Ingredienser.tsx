@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { PizzaContext } from "../PizzaContext/PizzaContextProvider";
 import pizzaDB from "../../../assets/pizza.json";
 import extra from "../../../assets/extra.json";
-
+import { v4 as uuidv4 } from 'uuid';
 import "./Ingredienser.scss";
 import { OrderContext } from "../OrderContext/OrderContextProvider";
 
@@ -10,8 +10,6 @@ import { OrderContext } from "../OrderContext/OrderContextProvider";
 const Ingredienser = () => {
   const { state } = useContext(PizzaContext);
   const [extraIngredients, setExtraIngredients] = useState<string[]>([]); // Iniitializing state for extra ingredients
-
-  const selectedPizza = state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id];  // the first pizza from state if its available
 
   const handleExtrasChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     const isChecked = e.target.checked; // getting checkbox state
@@ -35,7 +33,7 @@ const Ingredienser = () => {
     }
     dispatch({
       type: "ADD",
-      payload: { id: state.pizzas[0].id, price: pizzaDB[state.pizzas[0].id].pris, antal: 1, name: pizzaDB[state.pizzas[0].id].namn, extra: extraIngredients },
+      payload: { id: state.pizzas[0].pizzaId, uuid: uuidv4(), price: pizzaDB[state.pizzas[0].pizzaId].pris, antal: 1, name: pizzaDB[state.pizzas[0].pizzaId].namn, extra: extraIngredients },
     });
 
   }
@@ -51,7 +49,7 @@ const Ingredienser = () => {
             <fieldset className="ingredientsFieldset gridContainer2">
               <legend className="defult-legend">Basic ingredienser</legend>
               {state.pizzas.map((m) => {
-                return pizzaDB[m.id].ingredienser.map((i) => {
+                return pizzaDB[m.pizzaId].ingredienser.map((i) => {
                   return (
                     <div className="defult-ingredienser" key={i}>
                       <input defaultChecked type="checkbox" id={i} name={i} />

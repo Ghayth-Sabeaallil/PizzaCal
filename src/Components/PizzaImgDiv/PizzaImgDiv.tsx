@@ -34,7 +34,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
         }
         dispatch({
             type: "SELECT",
-            payload: { id: id },
+            payload: { pizzaId: id },
         });
     }
 

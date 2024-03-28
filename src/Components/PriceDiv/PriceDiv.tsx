@@ -12,6 +12,17 @@ const PriceDiv = () => {
     const handleRemove = (id: number) => {
         dispatch({ type: "REMOVE", payload: id.toString() });
     };
+    const handleAntal = (id: string) => {
+        if (id[1] === "+") {
+            setAntal((antal) => antal + 1);
+        }
+        else if (id[1] === "-") {
+            setAntal((antal) => (antal > 1) ? antal - 1 : 1);
+        }
+
+        dispatch({ type: "EDIT", payload: id.toString(), antal: antal });
+
+    }
     return (
         <>{state &&
             <fieldset style={{ marginTop: "60px" }} className="priceFieldset" id="priceFieldset">
@@ -23,9 +34,9 @@ const PriceDiv = () => {
                             <span style={{ color: "#74993a", fontSize: "35px" }}>
                                 {o.name}
                             </span>
-                            <button id={o.id.toString()} >-</button>
-                            <span>{antal}</span>
-                            <button id={o.id.toString()} >+</button>
+                            <button onClick={() => handleAntal(o.id.toString() + "-")}>-</button>
+                            <span>{o.antal}</span>
+                            <button onClick={() => handleAntal(o.id.toString() + "+")}>+</button>
                             <div className="trash" onClick={() => handleRemove(o.id)}><img src="../../assets/img/trash.png" alt="trash" /></div>
                         </div>
 
@@ -34,7 +45,7 @@ const PriceDiv = () => {
                             <span style={{ color: "#438ba8" }}> price: </span>
                             <span style={{ color: "#c999be", fontSize: "40px" }}>
 
-                                {(o.price + (o.extra.length * 5)) * antal} :-
+                                {(o.price + (o.extra.length * 5)) * o.antal} :-
                             </span>
                         </label>
                         {o.extra.length > 0 && (
@@ -42,19 +53,21 @@ const PriceDiv = () => {
                                 <span style={{ color: "black" }}>Tillägg</span>
                                 <ul>
                                     {o.extra.map((ingredient: string) =>
-                                        <li key={ingredient} > {ingredient} x {antal}</li>
+                                        <li key={ingredient} > {ingredient} x {o.antal}</li>
                                     )}
                                 </ul>
                             </div>
                         )}
-                    </div></>)
+                    </div>
+                        <label>
+                            <span style={{ color: "#438ba8" }}> Total: </span>
+                            <span style={{ color: "#c999be", fontSize: "40px" }}>
+                                {price.reduce((partialSum, a) => partialSum + a, 0)}
+                            </span>
+                        </label>
+                    </>)
                 })}
-                <label>
-                    <span style={{ color: "#438ba8" }}> Total: </span>
-                    <span style={{ color: "#c999be", fontSize: "40px" }}>
-                        {price.reduce((partialSum, a) => partialSum + a, 0)}
-                    </span>
-                </label>
+
 
             </fieldset>
         }</>
