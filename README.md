@@ -1,7 +1,7 @@
 # Pizza Calculator
 
 ## Description
-This project is to calculate the pris of pizza
+This project is to calculate the price of pizza
 
 ## Installation 
 Step 1: Go to the projects folder
