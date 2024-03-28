@@ -1,7 +1,11 @@
 [
   {
     "extraIngredienser": 
+<<<<<<< Updated upstream
     ["mozzarellaost", 
+=======
+    ["ost", 
+>>>>>>> Stashed changes
     "pommes", 
     "räkor", 
     "skinka", 
@@ -17,6 +21,10 @@
     "gorgonzola", 
     "ricotta", 
     "parmesan"],
+<<<<<<< Updated upstream
     "sås": ["stark sås", "blandad sås", "mild sås"]
+=======
+    "sås": ["stark", "blandat", "mild"]
+>>>>>>> Stashed changes
   }
 ]
