@@ -39,6 +39,11 @@ const reducer = (state: OrderState, action: Action) => {
                 ...state,
                 pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
             };
+        case "EDIT":
+            return {
+                ...state,
+                pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
+            };
         default:
             return state;
     }
