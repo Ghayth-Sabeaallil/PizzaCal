@@ -12,11 +12,11 @@ const PriceDiv = () => {
 
     return (
         <>{
-            <fieldset style={{ marginTop: "60px" }} className="priceFieldset" id="priceFieldset">
+            <fieldset  className="priceFieldset" id="priceFieldset">
                 <legend className="price-legend">Din Beställning</legend>
                 {state.pizzas.map((o) => {
                     price.push((o.price + (o.extra.length * 5)));
-                    return (<><div style={{ display: "grid" }}>
+                    return (<><div>
                         <div className="antal">
                             <span style={{ color: "#74993a", fontSize: "35px" }}>
                                 {o.name}
