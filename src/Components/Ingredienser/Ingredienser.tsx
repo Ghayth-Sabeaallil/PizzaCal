@@ -35,7 +35,6 @@ const Ingredienser = () => {
       type: "ADD",
       payload: { id: state.pizzas[0].pizzaId, uuid: uuidv4(), price: pizzaDB[state.pizzas[0].pizzaId].pris, antal: 1, name: pizzaDB[state.pizzas[0].pizzaId].namn, extra: extraIngredients },
     });
-
   }
 
 
