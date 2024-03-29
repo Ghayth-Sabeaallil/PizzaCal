@@ -14,8 +14,8 @@ const Ingredienser = () => {
   const { state } = useContext(PizzaContext); // getting the state from PizzaContext
   const [extraIngredients, setExtraIngredients] = useState<string[]>([]); // Iniitializing state for extra ingredients
 
-  const selectedPizza = state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id];  // the first pizza from state if its available
-
+  const selectedPizza = state.pizzas.length > 0 && pizzaDB[state?.pizzas[0]?.id]; 
+  // this line code checks if there is a selected pizza and if there is, it gets the data based on its ID, and assigns them to the selectedPizza
 
   //function to handle checkbox change for extra ingredients
   const handleExtrasChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {

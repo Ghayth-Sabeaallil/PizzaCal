@@ -1,0 +1,12 @@
+@mixin flex-center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+@mixin fix-content{
+    width: fit-content;
+    height: fit-content;
+}
