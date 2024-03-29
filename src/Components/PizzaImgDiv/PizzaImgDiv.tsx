@@ -28,8 +28,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
         if (ingredienserDiv && root) {
             ingredienserDiv.style.display = 'flex';
             ingredienserDiv.style.visibility = 'visible';
-            root.style.display = 'grid';
-            root.style.gridTemplateColumns = '1fr 2fr 1fr'
+            root.style.display = 'flex';
 
         }
         dispatch({

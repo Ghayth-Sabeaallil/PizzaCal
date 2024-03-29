@@ -44,7 +44,7 @@ const reducer = (state: OrderState, action: Action) => {
             return {
                 ...state.pizzas,
                 pizzas: state.pizzas.map(p => {
-                    if (p.id == parseInt(action.payload)) {
+                    if (p.uuid == action.payload) {
                         return { ...p, antal: action.antal };
                     } else {
                         return p;
