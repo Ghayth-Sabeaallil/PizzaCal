@@ -35,6 +35,13 @@ const Ingredienser = () => {
       type: "ADD",
       payload: { id: state.pizzas[0].pizzaId, uuid: uuidv4(), price: pizzaDB[state.pizzas[0].pizzaId].pris, antal: 1, name: pizzaDB[state.pizzas[0].pizzaId].namn, extra: extraIngredients },
     });
+    extraIngredients.map((e) => {
+
+      let input = document.getElementById(`${e}-extra`) as HTMLInputElement;
+      input.checked = false;
+
+    })
+    setExtraIngredients([]);
   }
 
 
@@ -63,8 +70,8 @@ const Ingredienser = () => {
               {extra[0].sås.map((x) => {
                 return (
                   <div className="defult-ingredienser" key={x}>
-                    <div>
-                      <input onChange={handleExtrasChange} type="checkbox" id={x} name={x} />
+                    <div className="extra">
+                      <input onChange={handleExtrasChange} type="checkbox" id={`${x}-extra`} name={x} />
                       <label>{x}</label>
                     </div>
                   </div>
@@ -78,8 +85,8 @@ const Ingredienser = () => {
             {extra[0].extraIngredienser.map((x) => {
               return (
                 <div className="defult-ingredienser " key={x}>
-                  <div>
-                    <input onChange={handleExtrasChange} type="checkbox" id={x} name={x} />
+                  <div className="extra">
+                    <input onChange={handleExtrasChange} type="checkbox" id={`${x}-extra`} name={x} />
                     <label>{x}</label>
                   </div>
                 </div>
