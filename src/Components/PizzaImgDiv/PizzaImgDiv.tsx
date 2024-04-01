@@ -52,7 +52,7 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
             </div>*/}
 
             <div className="containerBuy">
-                <div className="select-btn" onClick={clickHandle}>✓Select</div>
+               <div className="select-btn" onClick={clickHandle}>✓Select</div>           
             </div>
         </div>
     </>)

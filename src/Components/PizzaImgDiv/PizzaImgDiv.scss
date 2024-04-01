@@ -1,3 +1,4 @@
+
 .pizza-img-div {
   width: fit-content;
   height: fit-content;
@@ -55,8 +56,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     .select-btn {
+      position: relative;
+      margin: auto;
+      padding: 12px 18px;
+      transition: all 0.2s ease;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }  
+  
+    
+     .select-btn {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -81,6 +92,8 @@
     .select-btn:hover {
       background-color: rgb(201, 199, 91);
       color: white;
-    }
+    } 
   }
 }
+
+

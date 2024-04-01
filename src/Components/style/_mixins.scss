@@ -10,3 +10,10 @@
     width: fit-content;
     height: fit-content;
 }
+
+
+@mixin button-style{
+    width: 18px;
+    height: 8px;
+    border-radius: 5px 0 0 5px;
+}
