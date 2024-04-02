@@ -1,5 +1,6 @@
 @import "../scss/colors";
 @import "../scss/fonts";
+@import "../scss/mixins";
 
 .ingredienserDiv{
   display: none;
@@ -9,34 +10,25 @@
   gap: 1em;
 }
 .pizzaFieldset {
-  width: fit-content;
-  height: fit-content;
+  @include fit-content;
   border: 3px solid #ffffff;
   border-radius: 15px;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-column;
   font-family: $primary-font;
   
   .main-legend {
     font-size: 2em;
     font-weight: bolder;
-    /* font-family: $primary-legend-font; */
     font-style: italic;
     color: $primary-legend-color;
     transform: translatey(-50%);
-    width: max-content;
-    padding: 0 0.15em;
+    @include width-padding;
   }
   .defult-legend {
-    font-size: 1.75em;
-    /* font-family: "Caveat Brush"; */
-    font-style: italic;
+    @include font-style;
     color: $primary-legend-color;
     transform: translatey(-50%);
-    width: max-content;
-    padding: 0 0.15em;
+    @include width-padding;
   }
   input {
     transform: scale(2);
@@ -45,34 +37,23 @@
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-row;
   justify-content: space-evenly;
 }
 
 .ingredientsFieldset {
-  width: fit-content;
-  height: fit-content;
+  @include fit-content;
   padding: 7px 15px 7px 15px;
-  /* margin-top: 10em; */
   margin: 0.5em;
-  border: 2px solid #ffffff;
-  border-radius: 10px;
+  @include border-style;
   gap: 1rem;
   .extra-legend {
-    font-size: 1.75em;
-    /* font-family: "Caveat Brush"; */
-    font-style: italic;
+    @include font-style;
     color: $primary-legend-color;
     transform: translatey(-50%);
-    width: max-content;
-    padding: 0 0.30em;
+    @include width-padding;
   }
-  input {
-    /* transform: scale(2); */
-  }
+ 
   label {
     margin-left: 1em;
   }
@@ -82,9 +63,7 @@
 }
 
 .defult-ingredienser {
-  font-size: 1.75em;
-  /* font-family: "Caveat Brush"; */
-  font-style: italic;
+  @include font-style;
   color: $primary-text-color;
   display: flex;
   gap: 0.75em;
@@ -105,16 +84,11 @@ input:hover {
 }
 
 .containerBuy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-row;
 
   .select-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
+    @include flex-center-row;
+    @include fit-content;
     padding: 0.2em 3rem;
     border: 3px solid black;
     background-color: $select-btn-background;
@@ -125,8 +99,7 @@ input:hover {
     -o-user-select: none;
     user-select: none;
     color: $select-btn-color;
-    font-size: 30px;
-    font-size: 45px;
+    font-size: 2.8125em;
     font-family: $primary-font;
    font-style: italic;
   }
