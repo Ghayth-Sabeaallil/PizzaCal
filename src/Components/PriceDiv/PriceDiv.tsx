@@ -31,12 +31,7 @@ const PriceDiv = () => {
             <fieldset style={{ marginTop: "60px" }} className="priceFieldset" id="priceFieldset">
                 <legend className="price-legend">Din Beställning</legend>
                 {state.pizzas.map((o) => {
-<<<<<<< HEAD
-                    price.push((o.price + (o.extra.length * 5)));
-                    return (<><div>
-=======
                     return (<><div style={{ display: "grid" }}>
->>>>>>> origin/Ghayth
                         <div className="antal">
                             <span style={{ color: "#74993a", fontSize: "35px" }}>
                                 {o.name}
@@ -73,4 +68,4 @@ const PriceDiv = () => {
     )
 }
 
-export default PriceDiv
+export default PriceDiv;
