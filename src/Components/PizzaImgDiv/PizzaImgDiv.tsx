@@ -1,35 +1,41 @@
+//import
 import { useContext, useState } from "react"
-import "./PizzaImgDiv.scss"
 import { PizzaList } from "../PizzaType/PizzaType"
 import { PizzaContext } from "../PizzaContext/PizzaContextProvider"
 
+//Scss
+import "./PizzaImgDiv.scss"
+
+//prop of type
 type PizzaProp = {
     pizzaDB: PizzaList[],
 }
 
 const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
+    //useState, to select pizza when we click on arrow btn
     const [id, setId] = useState(0);
-    const [, setPizza] = useState("");
+    //useContext, to send Pizza Id to Ingredienser and show it
     const { dispatch } = useContext(PizzaContext);
 
-
-    const changeHandle: React.ChangeEventHandler<HTMLImageElement> = (e) => {
+    //On img load (when we select another pizza) ingredienserDiv visibility will be hidden 
+    const changeHandle: React.ChangeEventHandler<HTMLImageElement> = () => {
         const ingredienserDiv = document.getElementById('ingredienserDiv');
         const root = document.getElementById('root');
         if (ingredienserDiv && root) {
             ingredienserDiv.style.visibility = 'hidden';
         }
-        setPizza(e.currentTarget.alt)
     }
+
+    //on click btn, show ingredienserDiv and send data to useContext
     const clickHandle: React.FormEventHandler<HTMLDivElement> = () => {
         const ingredienserDiv = document.getElementById('ingredienserDiv');
         const root = document.getElementById('root');
-
+        //show ingredienserDiv depends on pizza Id
         if (ingredienserDiv && root) {
             ingredienserDiv.style.display = 'flex';
             ingredienserDiv.style.visibility = 'visible';
             root.style.display = 'flex';
-
+            // send data to useContext
         }
         dispatch({
             type: "SELECT",
@@ -45,11 +51,6 @@ const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
                 <img onLoad={changeHandle} className="pizza-img" src={pizzaDB[id].img} alt={pizzaDB[id].namn} width="300" height="300" />
                 <img onClick={() => setId((count) => (count <= 5) ? count + 1 : 6)} src="../assets/img/right.png" alt="right-arrow" />
             </div>
-            {/* <div className="pizza-size">
-                <button><img src="../assets/img/person.png" alt="person" /></button>
-                <button><img src="../assets/img/family.png" alt="person" /></button>
-            </div>*/}
-
             <div className="containerBuy">
                 <div className="select-btn" onClick={clickHandle}>✓Select</div>
             </div>

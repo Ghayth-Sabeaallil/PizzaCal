@@ -1,5 +1,7 @@
+//import
 import { createContext, useReducer } from "react";
 
+//type of Order
 type Order = {
     id: number,
     uuid: string,
@@ -19,16 +21,18 @@ const initialPizzaState: OrderState = {
     pizzas: [],
 };
 
-
+//createContext
 export const OrderContext = createContext<{ state: OrderState; dispatch: React.Dispatch<Action>; }>({
     state: initialPizzaState,
     dispatch: () => null,
 });
 
+//3 actions (To add order, To remove order and to edit antal)
 type Action = { type: "ADD"; payload: Order }
     | { type: "REMOVE"; payload: string } |
 { type: "EDIT"; payload: string; antal: number };
 
+//dispatch 
 const reducer = (state: OrderState, action: Action) => {
     switch (action.type) {
         case "ADD":
@@ -60,18 +64,11 @@ type OrderContextProviderProp = {
 };
 
 function OrderContextProvider({ children }: OrderContextProviderProp) {
-    // här kan vi använda useReducer eller useState
-
-
     const [state, dispatch] = useReducer(reducer, initialPizzaState);
-
-
     return (
         <OrderContext.Provider value={{ state, dispatch }}>
             {children}
         </OrderContext.Provider>
     );
 }
-
-
 export default OrderContextProvider;

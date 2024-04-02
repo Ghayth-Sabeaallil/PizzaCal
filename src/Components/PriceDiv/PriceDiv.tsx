@@ -1,18 +1,27 @@
+//import
 import { useContext } from "react"
-import "./PriceDiv.scss"
 import { OrderContext } from "../OrderContext/OrderContextProvider";
 
+//Scss
+import "./PriceDiv.scss"
 
 const PriceDiv = () => {
+    //useContext, to get data
     const { state, dispatch } = useContext(OrderContext);
 
+    //remove pizza using uniq Id
     const handleRemove = (id: string) => {
         dispatch({ type: "REMOVE", payload: id });
     };
+
+    //Set antal pizza using uniq Id (plus)
     const handleAntalPlus = (id: string, st: number) => {
         dispatch({ type: "EDIT", payload: id, antal: st + 1 });
     }
+
+    //Set antal pizza using uniq Id (minus)
     const handleAntalMinus = (id: string, st: number) => {
+        //can change only if antal bigger than 1
         if (st > 1) {
             dispatch({ type: "EDIT", payload: id, antal: st - 1 });
         }

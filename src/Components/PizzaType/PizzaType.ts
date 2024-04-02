@@ -1,3 +1,4 @@
+//type
 export type PizzaList = {
     id: number,
     namn: string,
