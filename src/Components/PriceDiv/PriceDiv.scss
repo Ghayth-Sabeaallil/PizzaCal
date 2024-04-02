@@ -1,27 +1,29 @@
+@import "../scss/colors";
+@import "../scss/fonts";
+@import "../scss/mixins";
+
+
 .priceFieldset {
-    width: fit-content;
-    height: fit-content;
+    @include fit-content;
     padding: 7px 40px 7px 40px;
     margin-top: 10em;
     margin: 0.5em;
     border: 2px solid #ffffff;
-    font-size: 1.75em;
+    @include font-style;
     font-family: "Caveat Brush";
-    font-style: italic;
+    border-radius: 15px;
     color: rgb(0, 0, 0);
     display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 0.75em;
-    background-image: url("../assets/img/paper.jpg");
-
+    color: white;
 
     .price-legend {
-      font-size: 1.75em;
       font-family: "Caveat Brush";
-      font-style: italic;
-      color: #e9e76b;
+      @include font-style;
+      color: $primary-legend-color;
       transform: translatey(-50%);
       width: max-content;
       padding: 0 0.30em;
@@ -32,7 +34,9 @@
     label {
       margin-left: 1em;
     }  
+    
   }
+
 .antal{
     display: flex;
     gap: 1em;
@@ -44,12 +48,9 @@
     }
 }
 .trash{
-  width: fit-content;
-  height: fit-content;
+  @include fit-content;
   border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center-row;
   padding: 4px;
   background-color: #e96b6b;
 }

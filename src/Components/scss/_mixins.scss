@@ -1,0 +1,41 @@
+@mixin flex-center-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin fit-content{
+    width: fit-content;
+    height: fit-content;
+}
+
+
+@mixin button-style{
+    width: 18px;
+    height: 8px;
+    border-radius: 5px 0 0 5px;
+}
+
+@mixin font-style {
+    font-size: 1.75em;
+    font-style: italic;
+}
+
+@mixin width-padding {
+    width: max-content;
+    padding: 0 0.15em;
+}
+
+@mixin border-style {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
