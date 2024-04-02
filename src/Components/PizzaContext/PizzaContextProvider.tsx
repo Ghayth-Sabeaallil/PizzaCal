@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 
 type Pizza = {
-    id: number;
+    pizzaId: number;
 };
 
 

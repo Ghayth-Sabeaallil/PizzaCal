@@ -8,6 +8,8 @@ import PriceDiv from "./Components/PriceDiv/PriceDiv"
 import pizzaDB from "../assets/pizza.json"
 import PizzaContextProvider from "./Components/PizzaContext/PizzaContextProvider"
 
+import "./App.css"
+
 
 function App() {
 

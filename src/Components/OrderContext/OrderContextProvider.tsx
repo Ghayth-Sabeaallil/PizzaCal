@@ -2,6 +2,7 @@ import { createContext, useReducer } from "react";
 
 type Order = {
     id: number,
+    uuid: string,
     name: string,
     price: number,
     antal: number,
@@ -26,7 +27,7 @@ export const OrderContext = createContext<{ state: OrderState; dispatch: React.D
 
 type Action = { type: "ADD"; payload: Order }
     | { type: "REMOVE"; payload: string } |
-{ type: "EDIT"; payload: string };
+{ type: "EDIT"; payload: string; antal: number };
 
 const reducer = (state: OrderState, action: Action) => {
     switch (action.type) {
@@ -36,13 +37,19 @@ const reducer = (state: OrderState, action: Action) => {
             };
         case "REMOVE":
             return {
-                ...state,
-                pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
+                ...state.pizzas,
+                pizzas: state.pizzas.filter((l) => l.uuid !== action.payload),
             };
         case "EDIT":
             return {
-                ...state,
-                pizzas: state.pizzas.filter((l) => l.id !== parseInt(action.payload)),
+                ...state.pizzas,
+                pizzas: state.pizzas.map(p => {
+                    if (p.uuid == action.payload) {
+                        return { ...p, antal: action.antal };
+                    } else {
+                        return p;
+                    }
+                }),
             };
         default:
             return state;
