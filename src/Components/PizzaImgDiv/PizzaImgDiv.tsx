@@ -9,7 +9,7 @@ type PizzaProp = {
 
 const PizzaImgDiv = ({ pizzaDB }: PizzaProp) => {
     const [id, setId] = useState(0);
-    const [pizza, setPizza] = useState("");
+    const [, setPizza] = useState("");
     const { dispatch } = useContext(PizzaContext);
 
 

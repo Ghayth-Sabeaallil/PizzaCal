@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import "./PriceDiv.scss"
 import { OrderContext } from "../OrderContext/OrderContextProvider";
 
