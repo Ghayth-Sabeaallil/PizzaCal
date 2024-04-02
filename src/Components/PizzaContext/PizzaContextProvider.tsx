@@ -1,9 +1,9 @@
+//import
 import { createContext, useReducer } from "react";
 
 type Pizza = {
-    id: number;
+    pizzaId: number;
 };
-
 
 // GlobalState
 type PizzaState = {
@@ -14,15 +14,17 @@ const initialPizzaState: PizzaState = {
     pizzas: [],
 };
 
-
+//createContext
 export const PizzaContext = createContext<{ state: PizzaState; dispatch: React.Dispatch<Action>; }>({
     state: initialPizzaState,
     dispatch: () => null,
 });
 
+//action to select pizza (when we send data from pizza Img to Ingredianser)
 type Action =
     | { type: "SELECT"; payload: Pizza };
 
+//reducer (dispatch) to save Pizza Id, so we can use it on IngredienserDiv
 const reducer = (state: PizzaState, action: Action) => {
     switch (action.type) {
         case "SELECT":
@@ -38,18 +40,11 @@ type PizzaContextProviderProp = {
 };
 
 function PizzaContextProvider({ children }: PizzaContextProviderProp) {
-    // här kan vi använda useReducer eller useState
-
-
     const [state, dispatch] = useReducer(reducer, initialPizzaState);
-
-
     return (
         <PizzaContext.Provider value={{ state, dispatch }}>
             {children}
         </PizzaContext.Provider>
     );
 }
-
-
 export default PizzaContextProvider;

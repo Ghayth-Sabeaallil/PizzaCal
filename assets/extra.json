@@ -1,7 +1,7 @@
 [
   {
     "extraIngredienser": 
-    ["ost", 
+    ["mozzarella", 
     "pommes", 
     "räkor", 
     "skinka", 
@@ -17,6 +17,6 @@
     "gorgonzola", 
     "ricotta", 
     "parmesan"],
-    "sås": ["stark", "blandat", "mild"]
+    "sås": ["stark sås", "blandad sås", "mild sås"]
   }
 ]
